@@ -18,7 +18,7 @@ class Main < Sinatra::Base
 
   enable :raise_errors
 
-  helpers  Rtopia, Pagination::Helpers
+  helpers Rtopia, Pagination::Helpers
 end
 
 begin
