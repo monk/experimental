@@ -4,14 +4,14 @@ class Monk < Thor
   desc "test", "Run all tests"
   def test
     verify_config
-  
+
     $:.unshift File.join(File.dirname(__FILE__), "test")
-  
+
     require 'cutest'
     Cutest.run(Dir['./test/**/*_test.rb'])
   end
 
-  desc "start ENV", "Start Monk in the supplied environment"
+  desc "start", "Start Monk"
   def start
     verify_config
     invoke :redis
