@@ -4,6 +4,7 @@ capybara -v0.3.9
 culerity -v0.2.12
 cutest -v0.1.5
 ffi -v0.6.3
+haml -v3.0.21
 mime-types -v1.16
 rack-test -v0.5.6
 rake -v0.8.7
