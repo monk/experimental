@@ -1,8 +1,15 @@
-Setup
-=====
+Setup Your Environment
+======================
 
-1. Open a terminal and run `redis-server`
-2. Make sure you have rvm and do `rvm --create use 1.9.2@yourappname`
-3. Run `rvm gemset import`
-4. shotgun -s thin
+## Step 1. Setup all dependencies
+    
+    monk install
+
+## Step 2. Run Redis
+
+    monk redis start
+
+## Step 3. Run your Server
+   
+    monk start
 
