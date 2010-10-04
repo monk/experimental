@@ -1,8 +1,8 @@
 task :test do
-  require 'cutest'
-  $:.unshift('./test')
+  $:.unshift(*Dir["./vendor/gems/*/lib", "./test"])
+  require "cutest"
   
-  Cutest.run(Dir['./test/**/*_test.rb'])
+  Cutest.run(Dir["./test/**/*_test.rb"])
 end
 
 task :default => :test
