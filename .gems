@@ -1,1 +1,18 @@
-
+batch --version 0.0.3
+capybara --version 0.3.9
+culerity --version 0.2.12
+cutest --version 0.1.5
+ffi --version 0.6.3
+haml --version 3.0.21
+nest --version 0.0.7
+nokogiri --version 1.4.3.1
+ohm --version 0.1.0
+ohm-contrib --version 0.0.38
+pagination --version 0.3.3
+rack-test --version 0.5.6
+redis --version 2.0.10
+rtopia --version 0.2.3
+rubyzip --version 0.9.4
+selenium-webdriver --version 0.0.28
+sinatra --version 1.0
+spawn --version 0.1.4
