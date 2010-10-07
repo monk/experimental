@@ -1,14 +1,14 @@
-require "helper"
+require File.expand_path("../helper", File.dirname(__FILE__))
 
-Story("As a user I can view the site homepage") do
+Story "As a user I can view the site homepage" do
   setup do
     Capybara.app = Main.new
   end
 
   scenario "No query string" do
-    visit '/'
+    visit "/"
 
-    assert page.has_content?('Hello, world!')
+    assert page.has_content?("Hello, world!")
   end
 end
 

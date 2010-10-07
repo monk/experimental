@@ -1,16 +1,16 @@
-ENV['RACK_ENV'] = 'test'
+ENV["RACK_ENV"] = "test"
 
-require File.join(File.dirname(__FILE__), '..', 'init')
+require File.join(File.dirname(__FILE__), "..", "init")
 
-require 'cutest'
-require 'spawn'
-require 'capybara/dsl'
+require "cutest"
+require "spawn"
+require "capybara/dsl"
 
 Ohm.connect(db: 1)
 
 module Kernel
   def fixture(file)
-    File.open Main.root_path('test', 'fixtures', 'files', file)
+    File.open Main.root_path("test", "fixtures", "files", file)
   end
   private :fixture
 end
