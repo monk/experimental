@@ -1,8 +1,4 @@
 task :test do
-  $:.unshift(*Dir["./vendor/gems/*/lib", "./test"])
-  require "cutest"
-
-  Cutest.run(Dir["./test/**/*_test.rb"])
+  system "monk test"
 end
-
 task :default => :test
