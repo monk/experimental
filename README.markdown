@@ -2,14 +2,13 @@ Setup Your Environment
 ======================
 
 ## Step 1. Setup all dependencies.
-    
+
     monk install
 
-## Step 2. Run Redis.
+## Step 2. Run the tests.
 
-    monk redis start
+    monk test
 
-## Step 3. Run your Server.
-   
+## Step 3. Start the server.
+
     monk start
-
