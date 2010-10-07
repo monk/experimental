@@ -1,4 +1,4 @@
-$:.unshift(*Dir["./vendor/gems/*/lib"])
+$:.unshift(*Dir["./vendor/*/lib"])
 
 require "sinatra/base"
 require "ohm"
