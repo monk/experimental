@@ -1,18 +1,21 @@
-batch --version 0.0.3
-capybara --version 0.3.9
-culerity --version 0.2.12
-cutest --version 0.1.5
-ffi --version 0.6.3
-haml --version 3.0.21
-nest --version 0.0.7
-nokogiri --version 1.4.3.1
-ohm --version 0.1.0
-ohm-contrib --version 0.0.38
-pagination --version 0.3.3
-rack-test --version 0.5.6
-redis --version 2.0.10
-rtopia --version 0.2.3
-rubyzip --version 0.9.4
-selenium-webdriver --version 0.0.28
-sinatra --version 1.0
-spawn --version 0.1.4
+# .gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
+batch -v0.0.3
+capybara -v0.3.9
+culerity -v0.2.12
+cutest -v0.1.5
+ffi -v0.6.3
+haml -v3.0.21
+nest -v0.0.7
+nokogiri -v1.4.3.1
+ohm -v0.1.0
+ohm-contrib -v0.0.38
+pagination -v0.3.3
+rack -v1.2.1
+rack-test -v0.5.6
+rdiscount -v1.6.5
+redis -v2.0.10
+rtopia -v0.2.3
+rubyzip -v0.9.4
+selenium-webdriver -v0.0.28
+sinatra -v1.0
+spawn -v0.1.4
