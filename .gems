@@ -5,6 +5,8 @@ culerity -v0.2.12
 cutest -v0.1.5
 ffi -v0.6.3
 haml -v3.0.21
+json_pure -v1.4.6
+mime-types -v1.16
 nest -v0.0.7
 nokogiri -v1.4.3.1
 ohm -v0.1.0
