@@ -26,4 +26,3 @@ end
 Dir["./lib/*.rb", "./app/**/*.rb"].each { |rb| require rb }
 
 Main.run! if __FILE__ == $0
-

@@ -31,7 +31,7 @@ class Pistol
     end
 
     @app.class.reset! if @app.class.respond_to?(:reset!)
-  
+
     require File.expand_path(options[:files].first)
   end
 
@@ -42,4 +42,3 @@ class Pistol
     end.max
   end
 end
-

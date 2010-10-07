@@ -24,6 +24,5 @@ module Story
 end
 
 def Story(str, &blk)
-  Story.instance_eval(&blk) 
+  Story.instance_eval(&blk)
 end
-

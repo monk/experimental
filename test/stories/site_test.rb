@@ -11,4 +11,3 @@ Story "As a user I can view the site homepage" do
     assert page.has_content?("Hello, world!")
   end
 end
-

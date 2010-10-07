@@ -12,8 +12,8 @@
 
     Check the configuration file at `config/settings.rb`. The keys under each environment can be accessed with the Sinatra helper `settings` function, and you will also find an example in the default route.
 
-    Redis is connected to `#{@redis[:host]}:#{@redis[:port]}`. If you want to change it, you can change the REDIS_URL environment variable, e.g. 
-    
+    Redis is connected to `#{@redis[:host]}:#{@redis[:port]}`. If you want to change it, you can change the REDIS_URL environment variable, e.g.
+
     `export REDIS_URL=redis://127.0.0.1:22222/0`
 
 
@@ -26,7 +26,7 @@
     ------------
 
     We use RVM gemsets. All dependencies are listed in `default.gems`. You can import it by doing the following:
-    
+
     `rvm --create use 1.9.2@myapp`
 
     `rvm gemset import`
