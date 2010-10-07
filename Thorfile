@@ -4,6 +4,7 @@ class Monk < Thor
   desc "test", "Run all tests"
   def test
     verify_config
+    invoke :redis
 
     $:.unshift File.join(File.dirname(__FILE__), "test")
 
