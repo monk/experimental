@@ -5,24 +5,20 @@ require "ohm"
 require "ohm/contrib"
 require "rtopia"
 require "pagination"
-
 require "./lib/pistol"
 
 class Main < Sinatra::Base
-  def self.root_path(*args)
-    File.join(File.dirname(__FILE__), *args)
-  end
-
-  use Rack::Session::Cookie
-
-  set :views, root_path("app", "views")
-  set :root,  root_path
+  set    :root,      File.dirname(__FILE__)
+  set    :root_path, lambda { |*args| File.join(root, *args) }
+  set    :haml,      :escape_html => true, :format => :html5, :ugly => true
+  set    :views,     root_path("app", "views")
 
   enable :raise_errors
 
-  helpers Rtopia, Pagination::Helpers
-
+  use Rack::Session::Cookie
   use Pistol, :files => Dir[__FILE__, "./app/**/*.rb"]
+
+  helpers Rtopia, Pagination::Helpers
 
   load "./config/settings.rb"
 end
