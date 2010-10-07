@@ -8,6 +8,6 @@ Story "As a user I can view the site homepage" do
   scenario "No query string" do
     visit "/"
 
-    assert page.has_content?("Hello, world!")
+    assert page.has_content?("Monk 2 Experimental")
   end
 end
