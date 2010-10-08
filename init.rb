@@ -5,7 +5,7 @@ require "ohm"
 require "ohm/contrib"
 require "rtopia"
 require "pagination"
-require "./lib/pistol"
+require "pistol"
 
 class Main < Sinatra::Base
   set    :root,  lambda { |*args| File.join(File.dirname(__FILE__), *args) }
