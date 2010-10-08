@@ -8,10 +8,9 @@ require "pagination"
 require "./lib/pistol"
 
 class Main < Sinatra::Base
-  set    :root,      File.dirname(__FILE__)
-  set    :root_path, lambda { |*args| File.join(root, *args) }
-  set    :haml,      :escape_html => true, :format => :html5, :ugly => true
-  set    :views,     root_path("app", "views")
+  set    :root,  lambda { |*args| File.join(File.dirname(__FILE__), *args) }
+  set    :haml,  :escape_html => true, :format => :html5, :ugly => true
+  set    :views, root("app", "views")
 
   enable :raise_errors
 

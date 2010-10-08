@@ -10,7 +10,7 @@ Ohm.connect(db: 1)
 
 module Kernel
   def fixture(file)
-    File.open Main.root_path("test", "fixtures", "files", file)
+    File.open Main.root("test", "fixtures", "files", file)
   end
   private :fixture
 end
