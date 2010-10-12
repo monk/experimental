@@ -8,6 +8,11 @@ require "capybara/dsl"
 
 Ohm.connect(db: 1)
 
+prepare do
+  Ohm.flush
+  Capybara.app = Main.new
+end
+
 module Kernel
   def fixture(file)
     File.open Main.root("test", "fixtures", "files", file)
@@ -15,14 +20,19 @@ module Kernel
   private :fixture
 end
 
-module Story
-  extend Capybara
+class Story < Cutest::Scope
+  include Capybara
 
-  class << self
-    alias :scenario :test
+  alias :scenario :test
+
+  def post(path, *args)
+    page.driver.post(path, *args)
+    page.driver.follow_redirects!
   end
+
+  # define your story helpers here
 end
 
-def Story(str, &blk)
-  Story.instance_eval(&blk)
+def Story(&blk)
+  Story.new(&blk).call
 end

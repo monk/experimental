@@ -1,6 +1,7 @@
 require File.expand_path("../helper", File.dirname(__FILE__))
 
-Story "As a user I can view the site homepage" do
+# As a user I can view the site homepage
+Story do
   setup do
     Capybara.app = Main.new
   end
