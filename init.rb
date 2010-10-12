@@ -1,6 +1,8 @@
 $:.unshift(*Dir["./vendor/*/lib"])
 
 require "sinatra/base"
+require "haml"
+require "sass"
 require "ohm"
 require "ohm/contrib"
 require "rtopia"
@@ -15,7 +17,12 @@ class Main < Sinatra::Base
   enable :raise_errors
 
   use Rack::Session::Cookie
-  use Pistol, :files => Dir[__FILE__, "./app/**/*.rb"]
+
+  configure :development do
+    use Pistol, Dir["./app/**/*.rb", "./lib/*.rb"] do
+      reset! and load(__FILE__)
+    end
+  end
 
   helpers Rtopia, Pagination::Helpers
 
