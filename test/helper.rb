@@ -25,6 +25,8 @@ class Story < Cutest::Scope
 
   alias :scenario :test
 
+  # For cases where you want to directly post. Note that this only works for
+  # rack-test.
   def post(path, *args)
     page.driver.post(path, *args)
     page.driver.follow_redirects!
