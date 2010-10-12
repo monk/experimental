@@ -1,6 +1,6 @@
 ENV["RACK_ENV"] = "test"
 
-require File.join(File.dirname(__FILE__), "..", "init")
+require File.expand_path("../init", File.dirname(__FILE__))
 
 require "cutest"
 require "spawn"
