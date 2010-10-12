@@ -35,6 +35,6 @@ class Story < Cutest::Scope
   # define your story helpers here
 end
 
-def Story(&blk)
+def story(&blk)
   Story.new(&blk).call
 end
