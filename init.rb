@@ -13,9 +13,7 @@ class Main < Sinatra::Base
   set    :haml,  :escape_html => true, :format => :html5, :ugly => true
   set    :views, root("app", "views")
 
-  enable :raise_errors
-
-  use Rack::Session::Cookie
+  enable :sessions, :logging, :show_exceptions, :raise_errors
 
   configure :development do
     require "pistol"
