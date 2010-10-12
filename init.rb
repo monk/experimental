@@ -7,7 +7,6 @@ require "ohm"
 require "ohm/contrib"
 require "rtopia"
 require "pagination"
-require "pistol"
 
 class Main < Sinatra::Base
   set    :root,  lambda { |*args| File.join(File.dirname(__FILE__), *args) }
@@ -19,6 +18,8 @@ class Main < Sinatra::Base
   use Rack::Session::Cookie
 
   configure :development do
+    require "pistol"
+
     use Pistol, Dir["./app/**/*.rb", "./lib/*.rb"] do
       reset! and load(__FILE__)
     end
