@@ -1,7 +1,5 @@
 .DS_Store
 /log/*.log
 /tmp/*
-/config/settings.rb
-/config/redis.conf
 /db/redis.pid
 /db/dump.rdb
