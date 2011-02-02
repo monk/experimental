@@ -3,8 +3,6 @@ $:.unshift(*Dir["./vendor/*/lib"])
 require "sinatra/base"
 require "haml"
 require "sass"
-require "ohm"
-require "ohm/contrib"
 require "rtopia"
 require "pagination"
 
@@ -15,19 +13,20 @@ class Main < Sinatra::Base
 
   enable :sessions, :logging, :show_exceptions, :raise_errors
 
+  # Files to load
+  set    :files, [ './config/*.defaults.rb',
+                   './config/*.rb',
+                   './lib/*.rb',
+                   './app/**/*.rb' ]
+
   configure :development do
     require "pistol"
-
-    use Pistol, Dir["./app/**/*.rb", "./lib/*.rb"] do
-      reset! and load(__FILE__)
-    end
+    use Pistol, Dir[*Main.files] { reset! and load(__FILE__) }
   end
 
   helpers Rtopia, Pagination::Helpers
-
-  load "./config/settings.rb"
 end
 
-Dir["./lib/*.rb", "./app/**/*.rb"].each { |rb| require rb }
+Dir[*Main.files].each { |rb| require rb }
 
 Main.run! if __FILE__ == $0
