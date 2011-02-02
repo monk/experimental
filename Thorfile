@@ -15,6 +15,9 @@ class Monk < Thor
     exec "ruby init.rb"
   end
 
+  desc "irb", "Open a console"
+  def irb
+    exec "irb -r./init.rb"
   end
 
 private
@@ -22,5 +25,8 @@ private
     File.dirname(__FILE__)
   end
 
+  def exec(cmd)
+    say_status :run, cmd
+    super
   end
 end
