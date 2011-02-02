@@ -13,3 +13,5 @@ task :seed do
   #   # do something here
   # end
 end
+
+Dir['./lib/tasks/*.rake'].each { |f| load f }

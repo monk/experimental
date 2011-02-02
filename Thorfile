@@ -30,3 +30,5 @@ private
     super
   end
 end
+
+Dir['./lib/thors/**/*.thor'].each { |thor| load thor }
