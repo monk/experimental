@@ -1,13 +1,15 @@
 # Rename this file to 'sequel.rb' to use Sequel.
-Main.configure do |m|
-  m.set :sequel, "sqlite://db/development.db"
-end
+unless Main.sequel?
+  Main.configure do |m|
+    m.set :sequel, "sqlite://db/development.db"
+  end
 
-# To define a different server for another environment, uncomment below.
-# Main.configure(:production) do |m|
-#   require 'mysql'
-#   m.set :sequel, "mysql://root@localhost/db_name"
-# end
+  # To define a different server for another environment, uncomment below.
+  # Main.configure(:production) do |m|
+  #   require 'mysql'
+  #   m.set :sequel, "mysql://root@localhost/db_name"
+  # end
+end
 
 require 'sequel'
 Main.set :db, Sequel.connect(ENV['DATABASE_URL'] || Main.sequel)
