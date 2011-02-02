@@ -3,3 +3,5 @@
 /tmp/*
 /db/redis.pid
 /db/dump.rdb
+/vendor/*/test
+/vendor/*/spec
