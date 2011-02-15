@@ -1,10 +1,16 @@
 $:.unshift(*Dir["./vendor/*/lib"])
 
-require "sinatra/base"
-require "haml"
-require "sass"
-require "rtopia"
-require "pagination"
+begin
+  require "sinatra/base"
+  require "haml"
+  require "sass"
+  require "rtopia"
+  require "pagination"
+rescue LoadError => e
+  $stderr.write "Not all gems were able to load. (#{e.message})\n"
+  $stderr.write "Do `monk install` first, or install the gems in .gems yourself.\n"
+  exit
+end
 
 class Main < Sinatra::Base
   set    :root,  lambda { |*args| File.join(File.dirname(__FILE__), *args) }
