@@ -18,6 +18,7 @@ class Main < Sinatra::Base
   set    :root,  lambda { |*args| File.join(File.dirname(__FILE__), *args) }
   set    :haml,  :escape_html => true, :format => :html5, :ugly => true
   set    :views, root("app", "views")
+  set    :run,   lambda { __FILE__ == $0 and not running? }
 
   enable :sessions, :logging, :show_exceptions, :raise_errors
 
@@ -37,4 +38,4 @@ end
 
 Dir[*Main.files].each { |rb| require rb }
 
-Main.run! if __FILE__ == $0
+Main.run! if Main.run?
